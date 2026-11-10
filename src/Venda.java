@@ -20,4 +20,11 @@ public class Venda {
     public double getTotal() {
         return quantidade * precoUnitario;
     }
+
+    public int getId() { return id; }
+    public LocalDate getData() { return data; }
+    public String getProduto() { return produto; }
+    public String getVendedor() { return vendedor; }
+    public int getQuantidade() { return quantidade; }
+    public double getPrecoUnitario() { return precoUnitario; }
 }
