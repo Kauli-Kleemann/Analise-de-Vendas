@@ -16,4 +16,8 @@ public class Venda {
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
     }
+
+    public double getTotal() {
+        return quantidade * precoUnitario;
+    }
 }
