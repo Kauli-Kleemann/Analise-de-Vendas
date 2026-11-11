@@ -1,5 +1,6 @@
 import java.time.format.TextStyle;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Locale;
@@ -37,5 +38,13 @@ public class Analisador {
             totais.merge(mes, v.getTotal(), Double::sum);
         }
         return totais;
+    }
+
+    public Map<String, Double> ordenarDecrescente(Map<String, Double> mapa) {
+        Map<String, Double> ordenado = new LinkedHashMap<>();
+
+        mapa.entrySet().stream().sorted(Map.Entry.<String, Double>comparingByValue().reversed()).forEach(e -> ordenado.put(e.getKey(), e.getValue()));
+
+        return ordenado;
     }
 }

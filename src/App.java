@@ -56,8 +56,8 @@ public class App {
         }
         */
 
-        imprimir("\nTotal por Produto:", analisador.totalPorProduto());
-        imprimir("Total por Vendedor:", analisador.totalPorVendedor());
-        imprimir("Total por Mês:", analisador.totalPorMes());
+        imprimir("\nTotal por Produto:", analisador.ordenarDecrescente(analisador.totalPorProduto()));
+        imprimir("Total por Vendedor:", analisador.ordenarDecrescente(analisador.totalPorVendedor()));
+        imprimir("Total por Mês:", analisador.ordenarDecrescente(analisador.totalPorMes()));
     }
 }
