@@ -9,6 +9,14 @@ import java.util.Map;
 
 public class App {
 
+    private static void imprimir(String titulo, Map<String, Double> mapa) {
+        System.out.println(titulo);
+        for (Map.Entry<String, Double> e : mapa.entrySet()) {
+            System.out.printf("%s: R$ %.2f%n", e.getKey(), e.getValue());
+        }
+        System.out.println();
+    }
+
     public static List<Venda> lerVendas(String caminho) {
     List<Venda> vendas = new ArrayList<>();
 
@@ -41,9 +49,15 @@ public class App {
 
         Analisador analisador = new Analisador(vendas);
 
-        System.out.println("Total por Produto:");
+        /*
+        System.out.println("\nTotal por Produto:");
         for (Map.Entry<String, Double> e : analisador.totalPorProduto().entrySet()) {
             System.out.printf("%s: R$ %.2f%n", e.getKey(), e.getValue());
         }
+        */
+
+        imprimir("\nTotal por Produto:", analisador.totalPorProduto());
+        imprimir("Total por Vendedor:", analisador.totalPorVendedor());
+        imprimir("Total por Mês:", analisador.totalPorMes());
     }
 }
