@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class App {
 
@@ -36,6 +37,13 @@ public class App {
         System.out.println("Vendas lidas: " + vendas.size());
         for (Venda v : vendas) {
             System.out.println(v.getProduto() + " | " + v.getVendedor() + " | R$ " + v.getTotal());
+        }
+
+        Analisador analisador = new Analisador(vendas);
+
+        System.out.println("Total por Produto:");
+        for (Map.Entry<String, Double> e : analisador.totalPorProduto().entrySet()) {
+            System.out.printf("%s: R$ %.2f%n", e.getKey(), e.getValue());
         }
     }
 }
